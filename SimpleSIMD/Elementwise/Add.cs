@@ -26,7 +26,8 @@ namespace SimpleSimd
 
                 int length = left.Length / Vector<T>.Count;
 
-                for (; i < length; i++)
+                //for (; i < length; i++)
+                for (; i < left.Length; i += Vector<T>.Count)
                 {
                     vrResult.Offset(i) = Vector.Add(vrLeft.Offset(i), vRight);
                 }
